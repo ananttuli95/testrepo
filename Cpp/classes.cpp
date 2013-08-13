@@ -11,7 +11,7 @@ class student
 
 int main()
 {    student s1,s2;
-     ofstream wfile("student.dat",ios::app);
+     ofstream wfile("student.dat",ios::out);
      cout<<"Enter name : ";
      cin>>s1.name;
      cout<<"Enter age : ";
@@ -21,6 +21,10 @@ int main()
      wfile.close();
      ifstream rfile("student.dat",ios::in);
      rfile.read((char*)&s2,sizeof(s2));
+      cout<<"Name from file : ";
+	cout<<s2.name;
+	cout<<"Age from file : ";
+       cout<<s2.age;
       rfile.close();
    return 0;
      
